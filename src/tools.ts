@@ -8,16 +8,16 @@ function formatSigleNum(n) {
  */
 export function formatNow() {
   let now = new Date();
-  let year = now.getFullYear();
-  let month = now.getMonth() + 1;
+  let year: number | string = now.getFullYear();
+  let month: number | string = now.getMonth() + 1;
   month = formatSigleNum(month);
-  let day = now.getDate();
+  let day: number | string = now.getDate();
   day = formatSigleNum(day);
-  let hour = now.getHours();
+  let hour: number | string = now.getHours();
   hour = formatSigleNum(hour);
-  let minute = now.getMinutes();
+  let minute: number | string = now.getMinutes();
   minute = formatSigleNum(minute);
-  let second = now.getSeconds();
+  let second: number | string = now.getSeconds();
   second = formatSigleNum(second);
   return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
 }
@@ -29,9 +29,9 @@ export function formatNow() {
  */
 export function formatDuration(duration) {
   if (!duration) return "";
-  let minute = Math.floor(duration / 60);
+  let minute: number | string = Math.floor(duration / 60);
   minute = formatSigleNum(minute);
-  let second = duration % 60;
+  let second: number | string = duration % 60;
   second = formatSigleNum(second);
   return `${minute}′${second}″`;
 }

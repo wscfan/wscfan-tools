@@ -1,13 +1,47 @@
 {
   "name": "wscfan-tools",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "js工具",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "files": [],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"npm run dev\" \"npm run serve\"",
+    "dev": "rollup -c -w --bundleConfigAsCjs",
+    "serve": "wds --node-resolve -w --app-index demo/index.html --open",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "autoprefixer": "^10.4.16",
+    "commitizen": "^4.3.0",
+    "concurrently": "^8.2.2",
+    "cz-git": "^1.7.1",
+    "postcss": "^8.4.31",
+    "rollup": "^4.3.0",
+    "rollup-plugin-scss": "3",
+    "sass": "^1.69.5",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@web/dev-server": "^0.4.0"
   },
   "author": "wscfan",
-  "keywords": ["js"],
+  "keywords": [
+    "wscfan",
+    "tools",
+    "js"
+  ],
   "license": "ISC",
   "repository": {
     "type": "git",

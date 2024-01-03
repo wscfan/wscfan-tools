@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="timeBox"></h1>
+
+    <script type="module">
+      import WscfanTools from "../dist/index";
+      setInterval(() => {
+        document.getElementById("timeBox").innerHTML = WscfanTools.formatNow();
+      }, 1000);
+    </script>
+  </body>
+</html>
