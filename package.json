@@ -1,6 +1,6 @@
 {
   "name": "wscfan-tools",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "js工具",
   "main": "dist/index.js",
   "files": [],
@@ -8,6 +8,7 @@
     "start": "concurrently \"npm run dev\" \"npm run serve\"",
     "dev": "rollup -c -w --bundleConfigAsCjs",
     "serve": "wds --node-resolve -w --app-index demo/index.html --open",
+    "build": "rollup -c --bundleConfigAsCjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git-cz"
   },
@@ -28,6 +29,7 @@
     "cz-git": "^1.7.1",
     "postcss": "^8.4.31",
     "rollup": "^4.3.0",
+    "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-scss": "3",
     "sass": "^1.69.5",
     "tslib": "^2.6.2",

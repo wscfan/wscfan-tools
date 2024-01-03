@@ -2,17 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content"width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <h1 id="timeBox"></h1>
+    <div id="box"></div>
+    <pre><code id="codeBox">
+import WscfanTools from "../dist/index";
+WscfanTools.render(
+  {
+    tag: "div",
+    children: [
+      { tag: "h1", children: "生成dom实例" },
+      { tag: "p", children: "这是一段p标签文字" },
+      {
+        tag: "ul",
+        children: [
+          {
+            tag: "li",
+            children: "选项一",
+          },
+          {
+            tag: "li",
+            children: "选项二",
+          },
+        ],
+      },
+    ],
+  },
+  document.getElementById("box")
+);
+    </code></pre>
 
     <script type="module">
       import WscfanTools from "../dist/index";
-      setInterval(() => {
-        document.getElementById("timeBox").innerHTML = WscfanTools.formatNow();
-      }, 1000);
+      WscfanTools.render(
+        {
+          tag: "div",
+          children: [
+            { tag: "h1", children: "生成dom实例" },
+            { tag: "p", children: "这是一段p标签文字" },
+            {
+              tag: "ul",
+              children: [
+                {
+                  tag: "li",
+                  children: "选项一",
+                },
+                {
+                  tag: "li",
+                  children: "选项二",
+                },
+              ],
+            },
+          ],
+        },
+        document.getElementById("box")
+      );
     </script>
   </body>
 </html>

@@ -1,5 +1,9 @@
-import { formatNow, formatDuration, copyText, render } from "./tools"
+import * as dateTime from "./dateTime";
+import * as tools from "./tools";
+import * as dom from "./dom";
 
 export default {
-  formatNow, formatDuration, copyText, render
-}
+  ...dateTime,
+  ...tools,
+  ...dom,
+};
